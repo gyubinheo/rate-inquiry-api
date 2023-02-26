@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     # third apps
     "rest_framework",
     # local apps
+    "aws",
 ]
 
 MIDDLEWARE = [
