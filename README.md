@@ -11,15 +11,16 @@ HTTPS 통신만으로 API 요청이 가능한 API 서버를 구성
 Python=>3.8<br>
 * request.is_secure()로 ssl 여부를 판단하기에 로컬 테스트 시 해당 내용 주석 필요
 1. git clone https://github.com/gyubinheo/wishket-backend
-2. pip install -r requirements.txt
-3. .env 파일 생성<br>
+2. cd wishket-backend
+3. pip install -r requirements.txt
+4. .env 파일 생성<br>
 ```
 export DEBUG=1
 export SECRET_KEY='random-str'
 export DJANGO_ALLOWED_HOSTS=* localhost 127.0.0.1 [::1]
 ```
-4. python manage.py runserver
-5. GET http://127.0.0.1:8000/aws/usage/?year=2022&month=9<br>
+5. python manage.py runserver
+6. GET http://127.0.0.1:8000/aws/usage/?year=2022&month=9<br>
 parameter: year = YYYY, month = MM<br><br>
 POST http://127.0.0.1:8000/aws/bill/
 ```
