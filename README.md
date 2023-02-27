@@ -6,7 +6,37 @@
 AWS를 이용 중인 고객에게 사용 내역과 요금을 조회할 수 있도록 하는 2개의 API를 제공<br>
 HTTPS 통신만으로 API 요청이 가능한 API 서버를 구성
 <br><br>
-
+<!-- 사용 방법 -->
+## 사용 방법
+Python=>3.8<br>
+* request.is_secure()로 ssl 여부를 판단하기에 로컬 테스트 시 해당 내용 주석 필요
+1. git clone https://github.com/gyubinheo/wishket-backend
+2. pip install -r requirements.txt
+3. .env 파일 생성<br>
+```
+export DEBUG=1
+export SECRET_KEY='random-str'
+export DJANGO_ALLOWED_HOSTS=* localhost 127.0.0.1 [::1]
+```
+4. python manage.py runserver
+5. GET http://127.0.0.1:8000/aws/usage/?year=2022&month=9<br>
+parameter: year = YYYY, month = MM<br><br>
+POST http://127.0.0.1:8000/aws/bill/
+```
+{
+  "id":"555555555555",
+  "year":2022
+ }
+```
+or
+```
+{
+  "id":"555555555555",
+  "year":2022,
+  "month":10
+ }
+```
+<br><br>
 <!-- API 예시 -->
 ## API 예시
 GET /aws/usage/<br>
